@@ -8,7 +8,7 @@ html(lang='ko')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/creative.css')
     script(src='/bower_components/jquery/dist/jquery.js')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
     script(src='/bower_components/lodash/lodash.min.js')
@@ -16,15 +16,18 @@ html(lang='ko')
   body
     block top-nav
       include ./includes/topnav
-    block hero-unit
-    .main-content
-      if flashMessages
-        each texts, type in flashMessages
-          .container
-            .alert(class='alert-#{type}')
-              each msg in texts
-                p= msg           
-      block content
+    //- block hero-unit
+    //- .main-content
+    //-   if flashMessages
+    //-     each texts, type in flashMessages
+    //-       .container
+    //-         .alert(class='alert-#{type}')
+    //-           each msg in texts
+    //-             p= msg         
+    //-             
+    block header
+    block content
+    block section1
 
     block footer
       include ./includes/footer
