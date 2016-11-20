@@ -12,5 +12,6 @@
 #testbranch2
 
 #conflict
-
 #conflict solved
+
+#master
