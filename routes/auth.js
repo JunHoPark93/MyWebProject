@@ -1,6 +1,6 @@
 module.exports = function(app, passport) {
   app.post('/signin', passport.authenticate('local-signin', {
-    successRedirect : '/todos', // redirect to the secure profile section
+    successRedirect : '/todos', // redirect to the secure profile section // 다시 메인으로 돌릴 것
     failureRedirect : '/signin', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }));
