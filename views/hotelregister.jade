@@ -1,5 +1,121 @@
 extends layout
 
 block content
-  | ㅎㅎ
+  head
+    //if lt IE 7
+      html.no-js.ie6.oldie(lang='en')  
+    //if IE 7
+      html.no-js.ie7.oldie(lang='en')  
+    //if IE 8
+      html.no-js.ie8.oldie(lang='en')  
+    //if IE 9
+      html.no-js.ie9.oldie(lang='en')  
+    meta(charset='utf-8')
+    // Set the viewport width to device width for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='description', content='Coming soon, Bootstrap, Bootstrap 3.0, Free Coming Soon, free coming soon, free template, coming soon template, Html template, html template, html5, Code lab, codelab, codelab coming soon template, bootstrap coming soon template')
+    title Bootstrap Templates
+    // ============ Google fonts ============
+    link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800', rel='stylesheet', type='text/css')
+    // ============ Add custom CSS here ============
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/registerStyle.css') 
+    link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
+    
+    //link(rel='stylesheet', href='/bower_components/jquery-backstretch-2/jquery.backstretch.js')
+    // 최신 backstretch CDN 으로 변경함
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
+    
+  body
+    .container
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+        #banner
+          h1
+            | Register your house
+            strong TO PEOPLE ALL OVER THE WORLD  
+            |  with AirCNC
+          h5
+            strong 60132271 박준호
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12
+        .registrationform
+          form.form-horizontal
+            fieldset
+              legend
+                | Registration Form 
+                i.fa.fa-pencil.pull-right
+              .form-group
+                label.col-lg-2.control-label(for='inputEmail')
+                  | HouseName
+                .col-lg-10
+                  input#inputEmail.form-control(type='text', placeholder='Email')
+              .form-group
+                label.col-lg-2.control-label(for='inputPassword')
+                  | Region
+                .col-lg-10
+                  input#inputPassword.form-control(type='text', placeholder='Password')
+                  .checkbox
+                    label
+                      input(type='checkbox')
+                      |                                     Checkbox
+              .form-group
+                label.col-lg-2.control-label(for='textArea')
+                  | Introduction
+                .col-lg-10
+                  textarea#textArea.form-control(rows='3')
+                  //
+                    <span class="help-block">A longer block of help text that breaks onto a new line and
+                    may extend beyond one line.</span>
+              .form-group
+                label.col-lg-2.control-label
+                  | Gender
+                .col-lg-10
+                  .radio
+                    label
+                      input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+                      |                                     Male
+                  .radio
+                    label
+                      input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+                      |                                     Female
+              .form-group
+                label.col-lg-2.control-label(for='select')
+                  | Selects
+                .col-lg-10
+                  select#select.form-control
+                    option 1 person
+                    option 2 people
+                    option 3 people
+                    option 4 people
+                    option 5~10 people
+              .form-group
+                .col-lg-10.col-lg-offset-2
+                  button.btn.btn-warning(type='reset')
+                    | Cancel
+                  button.btn.btn-primary(type='submit')
+                    | Submit
+    
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    
+    script(type='text/javascript').
+      'use strict';
+      /* ========================== */
+      /* ::::::: Backstrech ::::::: */
+      /* ========================== */
+      // You may also attach Backstretch to a block-level element
       
+      
+      //$.backstretch(['../images/main1.jpg']);
+      
+      $.backstretch(
+      [
+      "../images/44.jpg",
+      "../images/colorful.jpg",
+      "../images/34.jpg",
+      "../images/images.jpg"
+      ],
+      {
+      duration: 4500,
+      fade: 1500
+      }
+      );

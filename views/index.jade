@@ -5,19 +5,19 @@ extends layout
 //-     .container
 //-       h1 BIGBANG-TODO
 
-block content
-  .container
-    .row
-      .col-md-6
-        h3 서비스 목적
-        p 본 서비스는 웹프로그래밍 수업을 위해서 sample로 만들어보는 것입니다. 
-      .col-md-6
-        h3 주요 기능
-        ul
-          li 사용자 관리
-          li 할 일 기록
-          li 기록 내용: 분류, 내용, 중요도, deadline
-          li 완료된 일 체크
+//- block content
+//-   .container
+//-     .row
+//-       .col-md-6
+//-         h3 서비스 목적
+//-         p 본 서비스는 웹프로그래밍 수업을 위해서 sample로 만들어보는 것입니다. 
+//-       .col-md-6
+//-         h3 주요 기능
+//-         ul
+//-           li 사용자 관리
+//-           li 할 일 기록
+//-           li 기록 내용: 분류, 내용, 중요도, deadline
+//-           li 완료된 일 체크
           
 block header
  header
@@ -34,7 +34,7 @@ block section1
     .container
       .row
         .col-lg-8.col-lg-offset-2.text-center
-          h2.section-heading We've got what you need!
+          h2.section-heading Register you house or travel around the world
           hr.light
           p.text-faded
             | Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!
@@ -42,41 +42,42 @@ block section1
           
 block section2
   section#services
-  .container
-    .row
-      .col-lg-12.text-center
-        h2.section-heading At Your Service
-        hr.primary
-  .container
-    .row
-      .col-lg-3.col-md-6.text-center
-        .service-box
-          i.fa.fa-4x.fa-diamond.text-primary.sr-icons
-          h3 Sturdy Templates
-          p.text-muted Our templates are updated regularly so they don't break.
-      .col-lg-3.col-md-6.text-center
-        .service-box
-          i.fa.fa-4x.fa-paper-plane.text-primary.sr-icons
-          h3 Ready to Ship
-          p.text-muted You can use this theme as is, or you can make changes!
-      .col-lg-3.col-md-6.text-center
-        .service-box
-          i.fa.fa-4x.fa-newspaper-o.text-primary.sr-icons
-          h3 Up to Date
-          p.text-muted We update dependencies to keep things fresh.
-      .col-lg-3.col-md-6.text-center
-        .service-box
-          i.fa.fa-4x.fa-heart.text-primary.sr-icons
-          h3 Made with Love
-          p.text-muted You have to make your websites with love these days!
+    .container
+      .row
+        .col-lg-12.text-center
+          i.fa.fa-cog.fa-spin.fa-3x.fa-fw 
+          h2.section-heading At Your Service
+          hr.primary
+    .container
+      .row
+        .col-lg-3.col-md-6.text-center
+          .service-box
+            i.fa.fa-5x.fa-child.text-primary.sr-icons
+            h3 Be a host
+            p.text-muted Sign in and make everyone see your gorgeous house !
+        .col-lg-3.col-md-6.text-center
+          .service-box
+            i.fa.fa-5x.fa-eye.text-primary.sr-icons
+            h3 Travel aournd the world 
+            p.text-muted Find house that you really like
+        .col-lg-3.col-md-6.text-center
+          .service-box
+            i.fa.fa-4x.fa-newspaper-o.text-primary.sr-icons
+            h3 Up to Date
+            p.text-muted We update dependencies to keep things fresh.
+        .col-lg-3.col-md-6.text-center
+          .service-box
+            i.fa.fa-4x.fa-heart.text-primary.sr-icons
+            h3 Made with Love
+            p.text-muted You have to make your websites with love these days!
           
 block section3
-  section#portfolio.no-padding
+  section#portfolio
     .container-fluid
-      .row.no-gutter.popup-gallery
+      
         .col-lg-4.col-sm-6
           a.portfolio-box(href='/hotel')
-            img.img-responsive(src='../images/header.jpg', alt='')
+            img.img-responsive(src='../images/main5.jpg', alt='' )
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -85,7 +86,7 @@ block section3
                   | Hotel List
         .col-lg-4.col-sm-6
           a.portfolio-box(href='/hotelregister')
-            img.img-responsive(src='../images/header.jpg', alt='')
+            img.img-responsive(src='../images/main5.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -93,8 +94,8 @@ block section3
                 .project-name
                   | Hotel Register
         .col-lg-4.col-sm-6
-          a.portfolio-box(href='/userProfile')
-            img.img-responsive(src='../images/header.jpg', alt='')
+          a.portfolio-box(href='/')
+            img.img-responsive(src='../images/main5.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -103,7 +104,7 @@ block section3
                   | Map
         .col-lg-4.col-sm-6
           a.portfolio-box(href='img/portfolio/fullsize/4.jpg')
-            img.img-responsive(src='../images/header.jpg', alt='')
+            img.img-responsive(src='../images/main5.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -112,7 +113,7 @@ block section3
                   | Epilogue
         .col-lg-4.col-sm-6
           a.portfolio-box(href='img/portfolio/fullsize/5.jpg')
-            img.img-responsive(src='../images/header.jpg', alt='')
+            img.img-responsive(src='../images/main5.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -120,8 +121,8 @@ block section3
                 .project-name
                   | Favorite
         .col-lg-4.col-sm-6
-          a.portfolio-box(href='img/portfolio/fullsize/6.jpg')
-            img.img-responsive(src='../images/header.jpg', alt='')
+          a.portfolio-box(href='userProfile')
+            img.img-responsive(src='../images/main5.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded

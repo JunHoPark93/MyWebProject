@@ -9,10 +9,15 @@ html(lang='ko')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/creative.css')
+    link(rel='stylesheet', href='/bower_components/magnific-popup/dist/magnific-popup.css')
+
     script(src='/bower_components/jquery/dist/jquery.js')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
     script(src='/bower_components/lodash/lodash.min.js')
     script(src='/bower_components/moment/min/moment.min.js')
+    script(src='/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js')
+    script(src='/bower_components/scrollreveal/dist/scrollreveal.min.js')
+    
   body
     block top-nav
       include ./includes/topnav
@@ -24,9 +29,11 @@ html(lang='ko')
     //-         .alert(class='alert-#{type}')
     //-           each msg in texts
     //-             p= msg         
-    //-             
+    //-           
+    
+    // content없으면 에러남  
     block header
-    block content
+    block content 
     block section1
     block section2
     block section3
@@ -34,6 +41,7 @@ html(lang='ko')
 
 
     script(type='text/javascript', src='/javascripts/creative.js')
-
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js')
+    
     block footer
       include ./includes/footer
