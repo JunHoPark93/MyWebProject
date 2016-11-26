@@ -1,25 +1,84 @@
 extends layout
 
 block content
-  .container
-    form.form-signin(action='/signin', method='POST')
-      label(for='email', class='sr-only') Email address
-      input(
-        type='email', id='email', name='email', class='form-control', 
-        placeholder='Email address', required, autofocus
-      )
-      label(for='password', class='sr-only') Password
-      input(
-        type='password', id='password', name='password', class='form-control', 
-        placeholder='Password', required, autofocus
-      )
-      button.btn.btn-lg.btn-primary.btn-block(type='submit') 로그인
-      | 
-      a.btn.btn-info.btn-lg.btn-block(href='/auth/facebook')
-        i.fa.fa-facebook.fa-lg
-        | &nbsp; &nbsp;Signin with Facebook
-      hr
-      a.btn.btn-default.btn-mini(href='/users/new') 회원가입
-      | 
-      a.btn.btn-default.btn-mini(href='/reset-password') 비밀번호 재설정
+  head
+    //if lt IE 7
+      html.no-js.ie6.oldie(lang='en')  
+    //if IE 7
+      html.no-js.ie7.oldie(lang='en')  
+    //if IE 8
+      html.no-js.ie8.oldie(lang='en')  
+    //if IE 9
+      html.no-js.ie9.oldie(lang='en')  
+    meta(charset='utf-8')
+    // Set the viewport width to device width for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='description', content='Coming soon, Bootstrap, Bootstrap 3.0, Free Coming Soon, free coming soon, free template, coming soon template, Html template, html template, html5, Code lab, codelab, codelab coming soon template, bootstrap coming soon template')
+    title Bootstrap Templates
+    // ============ Google fonts ============
+    link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800', rel='stylesheet', type='text/css')
+    // ============ Add custom CSS here ============
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/registerStyle.css') 
+    link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
+    
+    //link(rel='stylesheet', href='/bower_components/jquery-backstretch-2/jquery.backstretch.js')
+    // 최신 backstretch CDN 으로 변경함
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
+    
+  body
+    .container
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+        #banner
+          h1
+            | Login 
+            strong AirCNC  
+            | enter your info
+            
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12
+        form.form-signin(action='/signin', method='POST')
+          label(for='email', class='sr-only') Email address
+          input(
+            type='email', id='email', name='email', class='form-control', 
+            placeholder='Email address', required, autofocus
+          )
+          label(for='password', class='sr-only') Password
+          input(
+            type='password', id='password', name='password', class='form-control', 
+            placeholder='Password', required, autofocus
+          )
+          button.btn.btn-lg.btn-primary.btn-block(type='submit') 로그인
+          | 
+          a.btn.btn-info.btn-lg.btn-block(href='/auth/facebook')
+            i.fa.fa-facebook.fa-lg
+            | &nbsp; &nbsp;Signin with Facebook
+          hr
+          a.btn.btn-default.btn-mini(href='/users/new') 회원가입
+          | 
+          a.btn.btn-default.btn-mini(href='/reset-password') 비밀번호 재설정
+
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    
+    script(type='text/javascript').
+      'use strict';
+      /* ========================== */
+      /* ::::::: Backstrech ::::::: */
+      /* ========================== */
+      // You may also attach Backstretch to a block-level element
       
+      
+      //$.backstretch(['../images/main1.jpg']);
+      
+      $.backstretch(
+      [
+      "../images/44.jpg",
+      "../images/colorful.jpg",
+      "../images/34.jpg",
+      "../images/images.jpg"
+      ],
+      {
+      duration: 4500,
+      fade: 1500
+      }
+      );

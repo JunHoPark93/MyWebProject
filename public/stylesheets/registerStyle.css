@@ -122,6 +122,14 @@ legend
     font-size: 26px;
 }
 
+.form-control {
+  background-color: transparent;
+  color: white;
+}
+
+#select.form-control {
+  color:black;
+}
 
  textarea.form-control
 {

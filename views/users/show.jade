@@ -1,19 +1,72 @@
 extends ../layout
 
 block content
-  .container
-    h1.page-header 회원 정보
+  head
+    //if lt IE 7
+      html.no-js.ie6.oldie(lang='en')  
+    //if IE 7
+      html.no-js.ie7.oldie(lang='en')  
+    //if IE 8
+      html.no-js.ie8.oldie(lang='en')  
+    //if IE 9
+      html.no-js.ie9.oldie(lang='en')  
+    meta(charset='utf-8')
+    // Set the viewport width to device width for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='description', content='Coming soon, Bootstrap, Bootstrap 3.0, Free Coming Soon, free coming soon, free template, coming soon template, Html template, html template, html5, Code lab, codelab, codelab coming soon template, bootstrap coming soon template')
+    title Bootstrap Templates
+    // ============ Google fonts ============
+    link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800', rel='stylesheet', type='text/css')
+    // ============ Add custom CSS here ============
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/registerStyle.css') 
+    link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
+    
+    //link(rel='stylesheet', href='/bower_components/jquery-backstretch-2/jquery.backstretch.js')
+    // 최신 backstretch CDN 으로 변경함
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
+    
+  body
+    .container
+      #banner
+        h1.page-header 회원 정보
+              
+        ul
+          li 이름: #{user.name}
+          li 이메일: #{user.email}
+          if user.facebook
+            li Facebook 
+              img.img-circle(src='#{user.facebook.photo}')
+        hr
+        p
+          a.btn.btn-default(href='/users/') 목록
+          | 
+          a.btn.btn-default(href='/users/#{user._id}/edit') 수정
+          | 
+          a.btn.btn-default(href='/users/#{user._id}?_method=DELETE') 삭제
           
-    ul
-      li 이름: #{user.name}
-      li 이메일: #{user.email}
-      if user.facebook
-        li Facebook 
-          img.img-circle(src='#{user.facebook.photo}')
-    hr
-    p
-      a.btn.btn-default(href='/users/') 목록
-      | 
-      a.btn.btn-default(href='/users/#{user._id}/edit') 수정
-      | 
-      a.btn.btn-default(href='/users/#{user._id}?_method=DELETE') 삭제
+          
+  script(src='/bower_components/bootstrap/dist/js/bootstrap.js')  
+  script(type='text/javascript').
+    'use strict';
+    /* ========================== */
+    /* ::::::: Backstrech ::::::: */
+    /* ========================== */
+    // You may also attach Backstretch to a block-level element
+    
+    
+    //$.backstretch(['../images/main1.jpg']);
+    
+    $.backstretch(
+    [
+    "../images/44.jpg",
+    "../images/colorful.jpg",
+    "../images/34.jpg",
+    "../images/images.jpg"
+    ],
+    {
+    duration: 4500,
+    fade: 1500
+    }
+    );

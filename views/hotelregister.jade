@@ -39,21 +39,21 @@ block content
             strong 60132271 박준호
       .col-lg-6.col-md-6.col-sm-6.col-xs-12
         .registrationform
-          form.form-horizontal
+          form.form-horizontal(action = "/hotelregister" method='POST')
             fieldset
               legend
-                | Registration Form 
+                | Hotel Registration
                 i.fa.fa-pencil.pull-right
               .form-group
                 label.col-lg-2.control-label(for='inputEmail')
                   | HouseName
                 .col-lg-10
-                  input#inputEmail.form-control(type='text', placeholder='Email')
+                  input#houseName.form-control(type='text', placeholder='HouseName', name='houseName')
               .form-group
                 label.col-lg-2.control-label(for='inputPassword')
                   | Region
                 .col-lg-10
-                  input#inputPassword.form-control(type='text', placeholder='Password')
+                  input#region.form-control(type='text', placeholder='Region', name='region')
                   .checkbox
                     label
                       input(type='checkbox')
@@ -62,32 +62,25 @@ block content
                 label.col-lg-2.control-label(for='textArea')
                   | Introduction
                 .col-lg-10
-                  textarea#textArea.form-control(rows='3')
+                  textarea#introduction.form-control(rows='3', name='introduction')
                   //
                     <span class="help-block">A longer block of help text that breaks onto a new line and
                     may extend beyond one line.</span>
               .form-group
-                label.col-lg-2.control-label
-                  | Gender
-                .col-lg-10
-                  .radio
-                    label
-                      input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
-                      |                                     Male
-                  .radio
-                    label
-                      input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
-                      |                                     Female
-              .form-group
                 label.col-lg-2.control-label(for='select')
                   | Selects
                 .col-lg-10
-                  select#select.form-control
+                  select#select.form-control(name='select')
                     option 1 person
                     option 2 people
                     option 3 people
                     option 4 people
                     option 5~10 people
+              .form-group
+                label.col-lg-2.control-label(for='inputEmail')
+                  | Price
+                .col-lg-10
+                  input#price.form-control(type='text', placeholder='Price', name='price')
               .form-group
                 .col-lg-10.col-lg-offset-2
                   button.btn.btn-warning(type='reset')
