@@ -19,23 +19,32 @@ router.post('/', function(req, res, next) {
   console.log(ses);
   console.log("---------");
   console.log(ses.passport.user);
+  var userId = ses.passport.user;
 
-  var newHotel = new Hotel({
-    houseName : req.body.houseName,
-    region : req.body.region,
-    writer : ses.passport.user,
-    introduction : req.body.introduction,
-    select : req.body.select,
-    price : req.body.price
-  });
-
-
-  newHotel.save(function(err) {
+  User.findById(userId, function(err, getuser) {
     if(err) {
       return next(err);
-    } else {
-      res.redirect('/hotelregister');
     }
+
+    userName = getuser.name;
+
+    var newHotel = new Hotel({
+      houseName : req.body.houseName,
+      region : req.body.region,
+      writer : ses.passport.user,
+      introduction : req.body.introduction,
+      select : req.body.select,
+      price : req.body.price,
+      name : userName
+    });
+
+    newHotel.save(function(err) {
+      if(err) {
+        return next(err);
+      } else {
+        res.redirect('/hotelregister');
+      }
+    });
   });
 });
 

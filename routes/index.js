@@ -1,5 +1,6 @@
 var express = require('express');
 var User = require('../models/User');
+var Hotel = require('../models/Hotel');
 var router = express.Router();
 
 function needAuth(req, res, next) {
@@ -21,8 +22,32 @@ router.get('/signin', function(req, res, next) {
 });
 
 // hotel list can be seen to anyone
-router.get('/hotel', function(req, res, next) {
-  res.render('hotel');
+router.get('/hotel', needAuth, function(req, res, next) {
+  // var db = req.db;
+  // var collection = db.get('hotels');
+  // collection.find({},{},function(err, hotels) {
+  //   res.render('hotel', {"hotels":hotels});
+  // }); // pass hotel list
+  // var ses = req.session;
+  // var userId = ses.passport.user;
+  //
+  // var userName;
+  // var user;
+
+  // User.findById(userId, function(err, getuser) {
+  //   if(err) {
+  //     return next(err);
+  //   }
+  //   userName = getuser.name;
+  // });
+
+  Hotel.find({}, function(err, hotels) {
+    if(err) {
+      return next(err);
+    }
+    //console.log(hotels);
+    res.render('hotel', {hotels:hotels});
+  });
 });
 
 // register nees an auth check
