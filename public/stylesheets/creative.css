@@ -389,6 +389,10 @@ fieldset[disabled] .btn-primary.active {
   color: #F05F40;
   background-color: white;
 }
+
+#hotellistBtn.btn-primary {
+  background-color: blue;
+}
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   border: none;

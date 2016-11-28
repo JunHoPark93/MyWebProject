@@ -125,6 +125,17 @@ router.post('/', function(req, res, next) {
     req.flash('danger', err);
     return res.redirect('back');
   }
+
+  User.findOne({name: req.body.name}, function(err, user) {
+    if(err) {
+      return next(err);
+    }
+    if(user) {
+      req.flash('danger', '동일한 이름이 이미 존재합니다.');
+      return res.render('/');
+    }
+  });
+
   User.findOne({email: req.body.email}, function(err, user) {
     if (err) {
       return next(err);

@@ -26,7 +26,7 @@ router.post('/', function(req, res, next) {
       return next(err);
     }
 
-    userName = getuser.name;
+    var userName = getuser.name;
 
     var newHotel = new Hotel({
       houseName : req.body.houseName,

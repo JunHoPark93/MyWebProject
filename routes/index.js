@@ -50,6 +50,7 @@ router.get('/hotel', needAuth, function(req, res, next) {
   });
 });
 
+
 // register nees an auth check
 router.get('/hotelregister', needAuth, function(req, res, next) {
   res.render('hotelregister');
@@ -59,5 +60,10 @@ router.get('/hotelregister', needAuth, function(req, res, next) {
 router.get('/userProfile', needAuth, function(req, res, next) {
   res.render('userProfile');
 });
+
+router.get('/hotelReserve', function(req, res, next) {
+  res.render('hotelReserve');
+});
+
 
 module.exports = router;

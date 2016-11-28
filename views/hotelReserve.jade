@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  head
+  
+    link(rel='stylesheet', href='/stylesheets/reserveStyle.css')
+    
+    //script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    //script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    script(type='text/javascript', src='//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js')
+    link(rel='stylesheet', type='text/css', href='//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css')
+
+    body
+     // Page Content
+     .container
+       .row
+         .col-lg-12
+           h1 Reserve Hotel
+           p
+             | please check once more if you really like 
+             | then reserve
+             
+           p 
+             | Hotel Name : #{hotel.houseName} 
+             | Owner : #{hotel.name}
+             | price : $ #{hotel.price}
+             | region : #{hotel.region}
+             | select : #{hotel.select}
+             | introduction : #{hotel.introduction}
+        
+           input(type='text', name='daterange', value='12/01/2016 - 12/09/2016')
+
+
+          button.btn.btn-primary.reserveBtn(type='submit')
+                    | Reserve
+    
+                    
+    script(type='text/javascript').
+      $(function() {
+      $('input[name="daterange"]').daterangepicker();
+      });
