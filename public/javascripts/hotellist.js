@@ -17,6 +17,5 @@ jQuery(document).ready(function($){
     $(this).css('background', 'pink');
     var name = $('hidden-xs').text();
     alert("check");
-    alert(name);
   });
 });

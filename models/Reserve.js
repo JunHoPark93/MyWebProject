@@ -5,9 +5,9 @@ var schema = mongoose.Schema({
 	    houseName: {type: String, trim: true, 'default':''},
       houseDistinct: {type: String},
 	    name: {type: String},
-	    introduction: {type: String, trim: true},
       reserved: {type: String, 'default':'N'},
       approved: {type: String, 'default':'N'},
+			dateRange: {type: String},
 	    created_at: {type: Date, index: {unique: false}, 'default': Date.now},
 	    updated_at: {type: Date, index: {unique: false}, 'default': Date.now}
 	});
