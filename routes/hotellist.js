@@ -52,7 +52,7 @@ router.post('/send/:id', function(req, res, next) {
       if(err){
         next(err);
       } else {
-        req.flash('success', '예약 완료');
+        req.flash('success', '예약 완료dd');
       }
     });
 
