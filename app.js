@@ -16,7 +16,8 @@ var routes = require('./routes/index'),
     todos = require('./routes/todos'),
     tasks = require('./routes/tasks'),
     register = require('./routes/hotelregister'),
-    hotel = require('./routes/hotellist');
+    hotel = require('./routes/hotellist'),
+    reglist = require('./routes/reglist');
 
 var routeAuth = require('./routes/auth');
 
@@ -69,6 +70,7 @@ app.use('/todos', todos);
 app.use('/tasks', tasks);
 app.use('/hotelregister', register);
 app.use('/hotel', hotel);
+app.use('/reglist', reglist);
 routeAuth(app, passport);
 
 // catch 404 and forward to error handler
