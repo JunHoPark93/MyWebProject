@@ -14,7 +14,8 @@ block content
      // Page Content
      .container
        .row
-        form(action='/hotel/send/#{hotel._id}', method='post')
+        //form(action='/hotel/send/#{hotel._id}', method='post')
+        form
          .col-lg-12
            h1 Reserve Hotel
            p
@@ -28,15 +29,17 @@ block content
              | region : #{hotel.region}
              | select : #{hotel.select}
              | introduction : #{hotel.introduction}
+             
+           li#hotelId #{hotel._id}
         
            input(type='text', name='daterange', id='daterange', value='12/01/2016 - 12/09/2016')
 
 
-          button.btn.btn-primary(type='submit')
+          button.btn.btn-primary.reserveBtn(type='button') 
                     | Reserve
     
     
-    script(type='text/javascript', src='/javascripts/hotellist.js')
+    script(type='text/javascript', src='/javascripts/hotelReserve.js')
                     
     script(type='text/javascript').
       $(function() {

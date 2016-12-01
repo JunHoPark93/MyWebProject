@@ -31,10 +31,12 @@ router.post('/:id', function(req, res, next) {
   });
 });
 
+// 중복 예약 방지 해야 함 id는 hotel의 objectId
 router.post('/send/:id', function(req, res, next) {
 
   var range = req.body.daterange;
   console.log(range);
+
 
   Hotel.findById(req.params.id, function(err, hotel) {
     if(err) {
@@ -58,6 +60,24 @@ router.post('/send/:id', function(req, res, next) {
 
     res.redirect('/');
   });
+});
+
+// ajax receive ---------------------------------------------------
+router.put('/check', needAuth, function(req, res, next) {
+  console.log('ajax post called');
+  var hotelId = req.body.hotelId;
+  var dateRange = req.body.dateRange;
+  console.log(hotelId);
+  console.log(dateRange);
+
+  // 꺼내서 예약이 되어있는지 비교
+  var response = {
+      status  : 200,
+      success : 'Updated Successfully'
+  };  //res.send({result:true, msg:msg});
+  res.set({'Content-Type': 'text/plain'});
+  res.send({result: "true" });
+//  res.end(JSON.stringify(response));
 });
 
 

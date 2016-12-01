@@ -1,6 +1,7 @@
 var express = require('express');
 var User = require('../models/User');
 var Hotel = require('../models/Hotel');
+var Reserve = require('../models/Reserve');
 var router = express.Router();
 
 function needAuth(req, res, next) {
@@ -23,24 +24,8 @@ router.get('/signin', function(req, res, next) {
 
 // hotel list can be seen to anyone
 router.get('/hotel', needAuth, function(req, res, next) {
-  // var db = req.db;
-  // var collection = db.get('hotels');
-  // collection.find({},{},function(err, hotels) {
-  //   res.render('hotel', {"hotels":hotels});
-  // }); // pass hotel list
-  // var ses = req.session;
-  // var userId = ses.passport.user;
-  //
-  // var userName;
-  // var user;
 
-  // User.findById(userId, function(err, getuser) {
-  //   if(err) {
-  //     return next(err);
-  //   }
-  //   userName = getuser.name;
-  // });
-
+  // 여기서 호텔 jade쪽으로 넘겨줄떄 예약 된 호텔들은 제외 시켜야 됨
   Hotel.find({}, function(err, hotels) {
     if(err) {
       return next(err);
