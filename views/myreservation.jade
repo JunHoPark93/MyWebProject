@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  head
+    link(rel='stylesheet', href='/stylesheets/hotellistStyle.css') 
+    
+  body
+    .container-fluid(style='background-color:#e8e8e8')
+      #property-listings.container.container-pad
+        .row
+          .col-md-12
+            h1 The HouseOwner has just apporved your request!!
+            p
+              | Now enjoy your trip!
+          
+        .row
+          each reserve in reserves 
+            .col-sm-6
+              // Begin Listing: 609 W GRAVERS LN
+              .brdr.bgc-fff.pad-10.box-shad.btm-mrg-20.property-listing
+                .media
+                  a.pull-left(href='#', target='_parent')
+                    img.img-responsive(alt='image', src='http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg')
+                  .clearfix.visible-sm
+                  .media-body.fnt-smaller
+                    a(href='#', target='_parent')
+                    h4.media-heading
+                      a(href='#', target='_parent')
+                        | $!{reserve.houseName}
+                    ul.list-inline.mrg-0.btm-mrg-10.clr-535353d
+                    p.hidden-xs                          
+                      | !{reserve.dateRange}
+                      | ...
+                    span.fnt-smaller.fnt-lighter.fnt-arial
+                      | What a nice choice! 

@@ -23,6 +23,7 @@ router.get('/:id', needAuth, function(req, res, next) {
     }
     name = user.name;
 
+// 예약된것들은 제외
     Reserve.find({name:name, approved:{$ne:"Y"}}, function(err, reserves) {
       console.log(reserves);
       console.log(reserves.length);

@@ -39,6 +39,9 @@ router.post('/send/:id', function(req, res, next) {
   var range = req.body.daterange;
   console.log(range);
 
+  var ses = req.session;
+  var userId = ses.passport.user;
+
 
   Hotel.findById(req.params.id, function(err, hotel) {
     if(err) {
@@ -49,7 +52,8 @@ router.post('/send/:id', function(req, res, next) {
       houseDistinct : hotel._id,
       houseName : hotel.houseName,
       dateRange : range,
-      name : hotel.name
+      name : hotel.name, // 등록자
+      customerId : userId
     }); // reserved, approved had default values
 
     newReserve.save(function(err) {

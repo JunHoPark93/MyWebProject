@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var schema = mongoose.Schema({
 	    houseName: {type: String, trim: true, 'default':''},
       houseDistinct: {type: String},
-	    name: {type: String},
+	    name: {type: String}, // 등록자 이름
+			customerId: {type: String},
       reserved: {type: String, 'default':'N'},
       approved: {type: String, 'default':'N'},
 			dateRange: {type: String},
