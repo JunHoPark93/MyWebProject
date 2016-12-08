@@ -23,9 +23,11 @@ router.get('/:id', needAuth, function(req, res, next) {
     }
     name = user.name;
 
-    Reserve.find({name:name}, function(err, reserves) {
+    Reserve.find({name:name, approved:{$ne:"Y"}}, function(err, reserves) {
       console.log(reserves);
       console.log(reserves.length);
+
+      // approved = Y이면 뿌리지 않음
 
       res.render('reglist', {reserves: reserves});
     });
