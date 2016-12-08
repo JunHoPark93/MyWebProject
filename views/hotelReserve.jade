@@ -9,13 +9,13 @@ block content
     //script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     script(type='text/javascript', src='//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js')
     link(rel='stylesheet', type='text/css', href='//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css')
-
+    script(type='text/javascript', src='/javascripts/hotelReserve.js')
     body
      // Page Content
      .container
        .row
         //form(action='/hotel/send/#{hotel._id}', method='post')
-        form
+        form(action='/hotel/send/#{hotel._id}', method='post')
          .col-lg-12
            h1 Reserve Hotel
            p
@@ -37,8 +37,13 @@ block content
 
           button.btn.btn-primary.reserveBtn(type='button') 
                     | Reserve
+          button.btn.btn-primary.confirmBtn(type='submit') 
+                    | Confirm
+          button.btn.btn-primary.backBtn(type='button') 
+                    | Back
+            
     
-    
+    script(src='/bower_components/moment/min/moment.min.js')
     script(type='text/javascript', src='/javascripts/hotelReserve.js')
                     
     script(type='text/javascript').

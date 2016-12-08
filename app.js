@@ -11,6 +11,7 @@ var mongoose   = require('mongoose');
 var passport = require('passport');
 var configAuth = require('./config/auth');
 
+
 var routes = require('./routes/index'),
     users = require('./routes/users'),
     todos = require('./routes/todos'),
@@ -30,6 +31,7 @@ if (app.get('env') === 'development') {
   app.locals.pretty = true;
 }
 app.locals.moment = require('moment');
+app.locals.momentRange = require('moment-range');
 
 // mongodb connect
 mongoose.connect('mongodb://park:3749@ds149437.mlab.com:49437/mydatabase');

@@ -1,7 +1,9 @@
 var express = require('express'),
     User = require('../models/User'),
     Hotel = require('../models/Hotel'),
-    Reserve = require('../models/Reserve');
+    Reserve = require('../models/Reserve'),
+    moment = require('moment'),
+    momentRange = require('moment-range');
 var router = express.Router();
 
 function needAuth(req, res, next) {
@@ -70,13 +72,37 @@ router.put('/check', needAuth, function(req, res, next) {
   console.log(hotelId);
   console.log(dateRange);
 
+  var response; // 호출된 쪽으로 넘길 것임
+
   // 꺼내서 예약이 되어있는지 비교
-  var response = {
-      status  : 200,
-      success : 'Updated Successfully'
-  };  //res.send({result:true, msg:msg});
-  res.set({'Content-Type': 'text/plain'});
-  res.send({result: "true" });
+  // find는 배열로넘어오기때문에 length로 체크하고 findone은 하나만 리턴하기때문에 null로 체크한다
+  Reserve.find({houseDistinct : hotelId}, function(err, hotels) {
+    if(err) {
+      next(err);
+    } else {
+      if(hotels.length === 0) {
+        response = {
+          status : "none",
+          hotels : null
+        };
+      } else { // 정보가 있는 것
+        response = {
+          status : "exists",
+          hotels : hotels
+        };
+      }
+    }
+
+    console.log(response);
+    res.set({'Content-Type': 'text/plain'});
+    console.log(response.status);
+    res.send({hotels : response});
+  });
+
+
+
+  //res.send({result:true, msg:msg});
+
 //  res.end(JSON.stringify(response));
 });
 

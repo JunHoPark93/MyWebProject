@@ -1,6 +1,7 @@
 var express = require('express'),
     User = require('../models/User'),
-    Hotel = require('../models/Hotel');
+    Hotel = require('../models/Hotel'),
+    moment = require('moment');
 var router = express.Router();
 
 

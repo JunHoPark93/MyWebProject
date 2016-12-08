@@ -22,6 +22,7 @@
     "moment": "~2.10.6",
     "scrollreveal": "^3.3.2",
     "magnific-popup": "^1.1.0",
-    "jquery-backstretch-2": "^2.1.15"
+    "jquery-backstretch-2": "^2.1.15",
+    "moment-range": "^2.2.0"
   }
 }

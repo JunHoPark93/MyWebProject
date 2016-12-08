@@ -5,6 +5,7 @@ html(lang='ko')
       title AirCNC
     meta(charset='UTF-8')
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
@@ -15,6 +16,8 @@ html(lang='ko')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
     script(src='/bower_components/lodash/lodash.min.js')
     script(src='/bower_components/moment/min/moment.min.js')
+    script(src='/bower_components/moment-range/dist/moment-range.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment-range/2.2.0/moment-range.js')
     script(src='/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js')
     script(src='/bower_components/scrollreveal/dist/scrollreveal.min.js')
     
@@ -41,8 +44,9 @@ html(lang='ko')
 
 
 
-    script(type='text/javascript', src='/javascripts/creative.js')
+    
     script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js')
+    script(type='text/javascript', src='/javascripts/creative.js')
     
     block footer
       include ./includes/footer
