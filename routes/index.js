@@ -31,6 +31,9 @@ router.get('/hotel', needAuth, function(req, res, next) {
       return next(err);
     }
     //console.log(hotels);
+
+    // ajax call 로 바꿀것이야
+    //res.render('hotel', {hotels:hotels});
     res.render('hotel', {hotels:hotels});
   });
 });

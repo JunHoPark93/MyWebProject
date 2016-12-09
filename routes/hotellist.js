@@ -68,6 +68,28 @@ router.post('/send/:id', function(req, res, next) {
   });
 });
 
+// ajax receive (hotel.jade) -------------
+router.put('/show', needAuth, function(req, res, next) {
+  console.log('ajax post called!');
+
+  var region = req.body.region;
+  console.log(region);
+
+  var response;
+
+  Hotel.find({region: region}, function(err, hotels) {
+    if(err) {
+      next(err);
+    } else { // 지역별로 호텔 찾아서 뷰에 뿌려줄것임
+      response = hotels;
+      //res.render('hotelcity', hotels);
+      res.set({'Content-Type': 'text/plain'});
+      res.send({hotels : response});
+    }
+  });
+});
+
+
 // ajax receive ---------------------------------------------------
 router.put('/check', needAuth, function(req, res, next) {
   console.log('ajax post called');

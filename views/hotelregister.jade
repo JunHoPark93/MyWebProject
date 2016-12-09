@@ -53,11 +53,12 @@ block content
                 label.col-lg-2.control-label(for='inputPassword')
                   | Region
                 .col-lg-10
-                  input#region.form-control(type='text', placeholder='Region', name='region')
-                  .checkbox
-                    label
-                      input(type='checkbox')
-                      |                                     Checkbox
+                  select.regionSelect(name='region' type='submit')
+                    option(value='') Select your region
+                    option(value='서울') 서울
+                    option(value='경기도') 경기도
+                    option(value='제주도') 제주도
+                  
               .form-group
                 label.col-lg-2.control-label(for='textArea')
                   | Introduction
@@ -76,6 +77,7 @@ block content
                     option 3 people
                     option 4 people
                     option 5~10 people
+              
               .form-group
                 label.col-lg-2.control-label(for='inputEmail')
                   | Price
