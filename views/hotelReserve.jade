@@ -20,18 +20,24 @@ block content
            h1 Reserve Hotel
            p
              | please check once more if you really like 
-             | then reserve
-             
-           p 
-             | Hotel Name : #{hotel.houseName} 
+             | then reserve       
+           p
+             | Hotel Name : #{hotel.houseName}
+           p
              | Owner : #{hotel.name}
+           p
              | price : $ #{hotel.price}
+           p
              | region : #{hotel.region}
+           p
              | select : #{hotel.select}
+           p
              | introduction : #{hotel.introduction}
              
            li#hotelId #{hotel._id}
-        
+           
+           p
+             | Select Date Range !!
            input(type='text', name='daterange', id='daterange', value='12/01/2016 - 12/09/2016')
 
 
