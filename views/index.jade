@@ -77,7 +77,7 @@ block section3
       
         .col-lg-4.col-sm-6
           a.portfolio-box(href='/hotel')
-            img.img-responsive.main-image(src='../images/main5.jpg', alt='' )
+            img.img-responsive.main-image(src='../images/main7.jpg', alt='' )
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -86,7 +86,7 @@ block section3
                   | Hotel List
         .col-lg-4.col-sm-6
           a.portfolio-box(href='/hotelregister')
-            img.img-responsive.main-image(src='../images/main6.jpg', alt='')
+            img.img-responsive.main-image(src='../images/main8.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -95,7 +95,7 @@ block section3
                   | Hotel Register
         .col-lg-4.col-sm-6
           a.portfolio-box(href='/myreservation')
-            img.img-responsive.main-image(src='../images/main3.jpg', alt='')
+            img.img-responsive.main-image(src='../images/main9.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -103,17 +103,27 @@ block section3
                 .project-name
                   | MyReservation
         .col-lg-4.col-sm-6
-          a.portfolio-box(href='img/portfolio/fullsize/4.jpg')
-            img.img-responsive.main-image(src='../images/main5.jpg', alt='')
-            .portfolio-box-caption
-              .portfolio-box-caption-content
-                .project-category.text-faded
-                  | AirCNC
-                .project-name
-                  | Epilogue
+          if(currentUser)
+            a.portfolio-box(href='/reglist/#{currentUser._id}')
+              img.img-responsive.main-image(src='../images/main10.jpg', alt='')
+              .portfolio-box-caption
+                .portfolio-box-caption-content
+                  .project-category.text-faded
+                    | AirCNC
+                  .project-name
+                    | Hotel Management
+          else
+            a.portfolio-box(href='/signin')
+              img.img-responsive.main-image(src='../images/main10.jpg', alt='')
+              .portfolio-box-caption
+                .portfolio-box-caption-content
+                  .project-category.text-faded
+                    | AirCNC
+                  .project-name
+                    | Hotel Management
         .col-lg-4.col-sm-6
           a.portfolio-box(href='img/portfolio/fullsize/5.jpg')
-            img.img-responsive.main-image(src='../images/main5.jpg', alt='')
+            img.img-responsive.main-image(src='../images/main13.jpg', alt='')
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded
@@ -121,14 +131,24 @@ block section3
                 .project-name
                   | Favorite
         .col-lg-4.col-sm-6
-          a.portfolio-box(href='userProfile')
-            img.img-responsive.main-image(src='../images/main5.jpg', alt='')
-            .portfolio-box-caption
-              .portfolio-box-caption-content
-                .project-category.text-faded
-                  | AirCNC
-                .project-name
-                  | Profile
+          if(currentUser) 
+            a.portfolio-box(href='/users/#{currentUser._id}')
+              img.img-responsive.main-image(src='../images/main12.jpg', alt='')
+              .portfolio-box-caption
+                .portfolio-box-caption-content
+                  .project-category.text-faded
+                    | AirCNC
+                  .project-name
+                    | Profile
+          else
+            a.portfolio-box(href='/signin')
+              img.img-responsive.main-image(src='../images/main12.jpg', alt='')
+              .portfolio-box-caption
+                .portfolio-box-caption-content
+                  .project-category.text-faded
+                    | AirCNC
+                  .project-name
+                    | Profile
                   
 
 block section4
