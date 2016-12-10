@@ -42,12 +42,26 @@ function validateForm(form, options) {
 
 /* GET users listing. */
 router.get('/', needAuth, function(req, res, next) {
-  User.find({}, function(err, users) {
-    if (err) {
-      return next(err);
-    }
-    res.render('users/index', {users: users});
-  });
+  // 관리자인지 검사해서 맞으면 user/index로 넘기고 아니면 다른 페이지로 넘긴다
+  var ses = req.session;
+  var userId = ses.passport.user;
+
+  console.log("admin session");
+  console.log(userId);
+
+// 관리자 id
+  if(userId == '584be3bb4bf9bf3408faa7fa') {
+    console.log("admin approved");
+    User.find({}, function(err, users) {
+      if (err) {
+        return next(err);
+      }
+      res.render('users/index', {users: users});
+    });
+  } else {
+    console.log("not admin");
+    res.render('users/notadmin');
+  }
 });
 
 router.get('/new', function(req, res, next) {
