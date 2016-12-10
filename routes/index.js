@@ -53,5 +53,16 @@ router.get('/hotelReserve', function(req, res, next) {
   res.render('hotelReserve');
 });
 
+router.get('/map', needAuth, function(req, res, next) {
+
+  Hotel.find({}, function(err, hotels) {
+    if(err) {
+      return next(err);
+    }
+
+    res.render('maplist', {hotels:hotels});
+  });
+});
+
 
 module.exports = router;

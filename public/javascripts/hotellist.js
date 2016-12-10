@@ -43,6 +43,7 @@ $('#regionSelect').change(function() {
       } else { // 정보가 있는것
         console.log(result.hotels[0].region);
         console.log(result.hotels.length);
+        $('#hotels').html("");
 
 
         for(var i=0; i<result.hotels.length; i++) {

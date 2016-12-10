@@ -1,0 +1,71 @@
+extends layout
+
+block content
+  head
+    link(rel='stylesheet', href='/stylesheets/maplistStyle.css') 
+    
+  body
+    .container-fluid(style='background-color:#e8e8e8')
+      #property-listings.container.container-pad
+        .row
+          .col-md-12
+            h1 Looking around AirCNC Hotel List
+            p
+              | make the decisions you want
+          .col-md-6
+            p
+              | Choose City you want
+            select#regionSelect(name='region' type='submit')
+              option(value='') Select your region
+              option(value='서울') 서울
+              option(value='경기도') 경기도
+              option(value='강원도') 강원도
+              option(value='충청북도') 충청북도
+              option(value='충청남도') 충청남도
+              option(value='경상북도') 경상북도
+              option(value='경상남도') 경상남도
+              option(value='전라북도') 전라북도
+              option(value='전라남도') 전라남도
+            br
+            br
+          //- each hotel in hotels 
+          //-   li 
+          //-     !{hotel.region}
+          //-   li
+          //-     !{hotel.houseName}
+          //-   li
+          //-     !{hotel.writer}
+        .row#hotels
+          each hotel in hotels 
+            .col-sm-6.frame
+              // Begin Listing: 609 W GRAVERS LN
+              .brdr.bgc-fff.pad-10.box-shad.btm-mrg-20.property-listing
+                .media
+                  form#myForm(action='/map/#{hotel._id}', method='post')
+                    a.pull-left(href='#', target='_parent')
+                      img.img-responsive(alt='image', src='http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg')
+                    .clearfix.visible-sm
+                    .media-body.fnt-smaller
+                      a(href='#', target='_parent')
+                      h4.media-heading.price
+                        a#price(href='#', target='_parent')
+                          | $!{hotel.price}
+                        small.pull-right houseName : !{hotel.houseName}
+                      ul.list-inline.mrg-0.btm-mrg-10.clr-535353
+                        li !{hotel.select}
+                        li(style='list-style: none') |
+                        li Owner :  !{hotel.name}
+                        
+                      p.hidden-xs                          
+                        | !{hotel.introduction}
+                        | ...
+                      span.fnt-smaller.fnt-lighter.fnt-arial
+                        | Select hotel 
+                        | you want
+      
+                      button#hotellistBtn.btn.btn-primary.mapBtn(type='submit')
+                             | SHOW MAP
+                             
+                             
+    script(type='text/javascript', src='/javascripts/maplist.js')
+                        

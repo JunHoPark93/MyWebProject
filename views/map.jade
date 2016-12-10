@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  head
+    link(rel='stylesheet', href='/stylesheets/map.css') 
+    
+  body
+    .row#container
+      .col-md-8
+        #map(style='width:70% ;height:400px;')
+      .col-md-4
+        h3 #{hotel.houseName}
+        p
+          | #{hotel.introduction}
+        h3 Project Details
+        ul
+          li price : $ #{hotel.price}
+          li region : #{hotel.region}
+          li people : #{hotel.select}
+          li postnum1 : #{hotel.postnum1}
+          li postnum2 : #{hotel.postnum2}
+          li roadNum : #{hotel.roadNum}
+          li detaiAdress : #{hotel.detailAddress}
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=91068c97dabd336eae8d267768fa0d80')
+  script(type='text/javascript', src='/javascripts/map.js')
