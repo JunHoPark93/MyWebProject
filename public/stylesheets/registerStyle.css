@@ -2,6 +2,10 @@
   color: black;
 }
 
+#post1, #post2, #addr, #addr2 {
+  color: black;
+}
+
 #custom-bootstrap-menu.navbar-default .navbar-brand
 {
     color: rgb(255, 255, 255);

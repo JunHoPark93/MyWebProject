@@ -22,6 +22,11 @@ router.post('/', function(req, res, next) {
   console.log(ses.passport.user);
   var userId = ses.passport.user;
 
+  // console.log(req.body.postnum1);
+  // console.log(req.body.postnum2);
+  // console.log(req.body.roadNum);
+  // console.log(req.body.detailAddress);
+
   User.findById(userId, function(err, getuser) {
     if(err) {
       return next(err);
@@ -36,7 +41,11 @@ router.post('/', function(req, res, next) {
       introduction : req.body.introduction,
       select : req.body.select,
       price : req.body.price,
-      name : userName
+      name : userName,
+      postnum1 : req.body.postnum1,
+      postnum2 : req.body.postnum2,
+      roadNum : req.body.roadNum,
+      detailAddress : req.body.detailAddress
     });
 
     newHotel.save(function(err) {
