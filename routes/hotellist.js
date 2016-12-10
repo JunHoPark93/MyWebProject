@@ -83,6 +83,7 @@ router.put('/show', needAuth, function(req, res, next) {
     } else { // 지역별로 호텔 찾아서 뷰에 뿌려줄것임
       response = hotels;
       //res.render('hotelcity', hotels);
+      
       res.set({'Content-Type': 'text/plain'});
       res.send({hotels : response});
     }
