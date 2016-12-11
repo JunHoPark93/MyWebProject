@@ -40,7 +40,7 @@ mongoose.connect('mongodb://park:3749@ds149437.mlab.com:49437/mydatabase');
 mongoose.connection.on('error', console.log);
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -110,9 +110,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.get('/favicon.ico', function(req, res) {
-    res.send(200);
-});
+// app.get('/favicon.ico', function(req, res) {
+//     res.send(200);
+// });
 
 
 module.exports = app;
