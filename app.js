@@ -19,7 +19,7 @@ var routes = require('./routes/index'),
     register = require('./routes/hotelregister'),
     hotel = require('./routes/hotellist'),
     reglist = require('./routes/reglist'),
-    myreg = require('./routes/MyReservation'),
+    myreg = require('./routes/myreservation'),
     map = require('./routes/map'),
     favorite = require('./routes/favorite');
 
