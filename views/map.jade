@@ -19,7 +19,7 @@ block content
           li people : #{hotel.select}
           li postnum1 : #{hotel.postnum1}
           li postnum2 : #{hotel.postnum2}
-          li roadNum : #{hotel.roadNum}
+          li#roadNum #{hotel.roadNum}
           li detaiAdress : #{hotel.detailAddress}
 
 
@@ -31,5 +31,6 @@ block content
   
   
   
-  script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=91068c97dabd336eae8d267768fa0d80')
+  script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=91068c97dabd336eae8d267768fa0d80&libraries=services')
+
   script(type='text/javascript', src='/javascripts/map.js')
