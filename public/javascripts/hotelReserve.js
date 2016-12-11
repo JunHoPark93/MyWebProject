@@ -13,6 +13,7 @@ jQuery(document).ready(function($){
     var hotelId = $('#hotelId').text(); // 호텔 고유값
     var dateRange = $("#daterange").val(); // 날짜 범위
     var dateRangeGet;
+    var isReserved = false;
 
     console.log(dateRange);
 
@@ -50,13 +51,16 @@ jQuery(document).ready(function($){
                 $('.reserveBtn').hide(); // 버튼 숨겨버려
                 $('.confirmBtn').show();
               } else {
+                isReserved = true;
                 $('.reserveBtn').hide(); // 버튼 숨겨버려
                 $('.confirmBtn').hide();
                 $('.backBtn').show();
               }
           }
         }
-
+        if(isReserved) {
+          window.alert("누군가 예약했습니다");
+        }
         $('.reserveBtn').css('background','blue');
       }
     });
@@ -93,8 +97,8 @@ var dateRangeValidate = function(data, range) {
 
   console.log(startComp);
   console.log(thisStartComp);
-  if(startComp<thisStartComp && thisStartComp <endComp ||
-    startComp<thisEndComp && thisEndComp<endComp) {
+  if(startComp<=thisStartComp && thisStartComp <=endComp ||
+    startComp<=thisEndComp && thisEndComp<=endComp) {
     console.log("overlaps");
     return false;
 
