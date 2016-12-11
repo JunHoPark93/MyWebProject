@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  head
+    link(rel='stylesheet', href='/stylesheets/maplistStyle.css') 
+    
+  body
+    .container-fluid(style='background-color:#e8e8e8')
+      #property-listings.container.container-pad
+        .row
+          .col-md-12
+            h1 My Favorite hotels!
+
+        .row
+          each hotel in hotels 
+            .col-sm-6.frame
+              // Begin Listing: 609 W GRAVERS LN
+              .brdr.bgc-fff.pad-10.box-shad.btm-mrg-20.property-listing
+                .media
+                  form#myForm(action='', method='post')
+                    a.pull-left(href='#', target='_parent')
+                      img.img-responsive(alt='image', src='http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg')
+                    .clearfix.visible-sm
+                    .media-body.fnt-smaller
+                      a(href='#', target='_parent')
+                      h4.media-heading.price
+                        a#price(href='#', target='_parent')
+                          | $ #{hotel.price}
+                        small.pull-right houseName : !{hotel.houseName}
+                      ul.list-inline.mrg-0.btm-mrg-10.clr-535353
+                        li !{hotel.select}
+                        
+                      p.hidden-xs                          
+                        | !{hotel.introduction}
+                        | ...
+                      
+                           
+                             
+    script(type='text/javascript', src='/javascripts/favorite.js')
+                        

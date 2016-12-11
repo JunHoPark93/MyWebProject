@@ -20,7 +20,8 @@ var routes = require('./routes/index'),
     hotel = require('./routes/hotellist'),
     reglist = require('./routes/reglist'),
     myreg = require('./routes/MyReservation'),
-    map = require('./routes/map');
+    map = require('./routes/map'),
+    favorite = require('./routes/favorite');
 
 var routeAuth = require('./routes/auth');
 
@@ -77,6 +78,7 @@ app.use('/hotel', hotel);
 app.use('/reglist', reglist);
 app.use('/myreservation', myreg);
 app.use('/map', map);
+app.use('/favorite', favorite);
 routeAuth(app, passport);
 
 // catch 404 and forward to error handler

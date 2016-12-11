@@ -3,7 +3,8 @@ var express = require('express'),
     Hotel = require('../models/Hotel'),
     Reserve = require('../models/Reserve'),
     moment = require('moment'),
-    momentRange = require('moment-range');
+    momentRange = require('moment-range'),
+    Favorite = require('../models/Favorite');
 var router = express.Router();
 
 function needAuth(req, res, next) {
@@ -83,7 +84,7 @@ router.put('/show', needAuth, function(req, res, next) {
     } else { // 지역별로 호텔 찾아서 뷰에 뿌려줄것임
       response = hotels;
       //res.render('hotelcity', hotels);
-      
+
       res.set({'Content-Type': 'text/plain'});
       res.send({hotels : response});
     }
@@ -132,6 +133,34 @@ router.put('/check', needAuth, function(req, res, next) {
 
 //  res.end(JSON.stringify(response));
 });
+
+// router.put('/favorite', needAuth, function(req, res, next) {
+//
+//   console.log("Favorite ajax called");
+//   var ses = req.session;
+//   var userId = ses.passport.user;
+//
+//   var hotelDistinct = req.body.hotelDistinct;
+//
+//   var favorite = new Favorite({
+//     hotelDistinct: hotelDistinct,
+//     user_id: userId
+//   });
+//
+//   favorite.save(function(err) {
+//     if(err){
+//       next(err);
+//     } else {
+//       req.flash('success', '즐겨찾기완료');
+//     }
+//
+//     // res.set({'Content-Type': 'text/plain'});
+//     // res.send({success : true});
+//     res.redirect('/');
+//   });
+//
+//   //res.redirect('/');
+// });
 
 
 module.exports = router;

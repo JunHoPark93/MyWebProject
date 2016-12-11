@@ -62,9 +62,15 @@ block content
                       span.fnt-smaller.fnt-lighter.fnt-arial
                         | Select hotel 
                         | you want
+                        
+                      p#hidden_id
+                        | !{hotel._id}
       
-                      button#hotellistBtn.btn.btn-primary.reserveBtn(type='submit')
+                    button#hotellistBtn.btn.btn-primary.reserveBtn(type='submit')
                              | Reserve
+                  form#myForm2(action='/favorite/#{hotel._id}', method='post')       
+                    button.btn.btn-outline-warning.favoriteBtn(type='submit') Favorite
+                    
                         
                 
 

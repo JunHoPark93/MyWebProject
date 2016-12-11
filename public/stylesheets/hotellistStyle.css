@@ -55,6 +55,10 @@ a {
     color: #535353;
 }
 
+.hidden_id {
+  visibility: hidden;
+}
+
 /*#property-listings {
   background-image: url('../images/main2.jpg');
 }*/

@@ -122,24 +122,35 @@ block section3
                   .project-name
                     | Hotel Management
         .col-lg-4.col-sm-6
-          a.portfolio-box(href='/map')
-            img.img-responsive.main-image(src='../images/main13.jpg', alt='')
-            .portfolio-box-caption
-              .portfolio-box-caption-content
-                .project-category.text-faded
-                  | AirCNC
-                .project-name
-                  | Favorite
+          if(currentUser)
+            a.portfolio-box(href='/favorite/#{currentUser._id}')
+              img.img-responsive.main-image(src='../images/main13.jpg', alt='')
+              .portfolio-box-caption
+                .portfolio-box-caption-content
+                  .project-category.text-faded
+                    | AirCNC
+                  .project-name
+                    | Favorite
+          else
+           a.portfolio-box(href='/signin')
+             img.img-responsive.main-image(src='../images/main13.jpg', alt='')
+             .portfolio-box-caption
+               .portfolio-box-caption-content
+                 .project-category.text-faded
+                   | AirCNC
+                 .project-name
+                   | Favorite
+         
         .col-lg-4.col-sm-6
           if(currentUser) 
-            a.portfolio-box(href='/users/#{currentUser._id}')
+            a.portfolio-box(href='/map')
               img.img-responsive.main-image(src='../images/main12.jpg', alt='')
               .portfolio-box-caption
                 .portfolio-box-caption-content
                   .project-category.text-faded
                     | AirCNC
                   .project-name
-                    | Profile
+                    | Map
           else
             a.portfolio-box(href='/signin')
               img.img-responsive.main-image(src='../images/main12.jpg', alt='')
@@ -148,7 +159,7 @@ block section3
                   .project-category.text-faded
                     | AirCNC
                   .project-name
-                    | Profile
+                    | Map
                   
 
 block section4
