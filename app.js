@@ -14,7 +14,6 @@ var configAuth = require('./config/auth');
 
 var routes = require('./routes/index'),
     users = require('./routes/users'),
-    tasks = require('./routes/tasks'),
     register = require('./routes/hotelregister'),
     hotel = require('./routes/hotellist'),
     reglist = require('./routes/reglist'),
@@ -70,7 +69,6 @@ configAuth(passport);
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/tasks', tasks);
 app.use('/hotelregister', register);
 app.use('/hotel', hotel);
 app.use('/reglist', reglist);
