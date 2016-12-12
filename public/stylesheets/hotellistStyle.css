@@ -7,6 +7,10 @@ a {
     text-decoration: none!important;
 }
 
+#hidden_id {
+  visibility: hidden;
+}
+
 /**** LAYOUT ****/
 .list-inline>li {
     padding: 0 10px 0 0;
